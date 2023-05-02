@@ -5,6 +5,7 @@ const Blog = () => {
     return (
         <Container>
             <Row>
+                <h2 className='border-bottom text-center text-primary my-4 mb-2 text-uppercase fw-bold'>Blog Section</h2>
                 <div className='p-4 mx-auto d-flex flex-column'>
                     <Col>
                         <div className='border rounded m-3 p-2 bg-light mx-auto'>
@@ -29,7 +30,7 @@ const Blog = () => {
                     <Col>
                         <div className='border rounded m-3 p-2 bg-light mx-auto'>
                             <h5 className='fw-semibold'><span className='text-success mb-2'>Question#4:</span><br />{' '}What is a custom hook, and why will you create a custom hook?</h5><hr />
-                            <p><span className='fw-bold'>Answer:<br />{' '}</span>A custom hook is a unique and memorable phrase or message that catches the attention of your audience. It's something that sets you apart from the competition and helps build brand recognition. Whether it's a catchy slogan, a clever tagline, or an inspiring call-to-action, creating a custom hook can be the key to standing out in today's crowded digital landscape. In fact, businesses have been using custom hooks for years as part of their marketing strategies to engage their audiences and build loyal customers. With so</p>
+                            <p><span className='fw-bold'>Answer:<br />{' '}</span>A custom hook is a unique and memorable phrase or message that catches the attention of your audience. Its something that sets you apart from the competition and helps build brand recognition. Whether its a catchy slogan, a clever tagline, or an inspiring call-to-action, creating a custom hook can be the key to standing out in todays crowded digital landscape. In fact, businesses have been using custom hooks for years as part of their marketing strategies to engage their audiences and build loyal customers. With so</p>
                         </div>
                     </Col>
                 </div>
