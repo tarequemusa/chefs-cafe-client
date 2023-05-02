@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {createUserWithEmailAndPassword, getAuth, sendEmailVerification, updateProfile} from "firebase/auth";
+import {createUserWithEmailAndPassword, getAuth, updateProfile} from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import {Link} from "react-router-dom";
 
@@ -16,7 +16,8 @@ const Register = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         const name = event.target.name.value;
-        console.log(name, email, password);
+        const photo = event.target.photo.value;
+        console.log(name, email, password, photo);
         // Password Validate:
         if(!/(?=.*[A-Z])/.test(password)) {
             setError('Please add atleast one uppercase');
@@ -39,7 +40,6 @@ const Register = () => {
                 setError('');
                 event.target.reset();
                 setSuccess('User Created Successfully');
-                sendVerificationEmail(result.user);
                 updateUserData(result.user, name);
             })
             .catch(error => {
@@ -49,13 +49,6 @@ const Register = () => {
             })
     }
 
-    const sendVerificationEmail = (user) => {
-        sendEmailVerification(user)
-            .then(result => {
-                console.log(result);
-                alert('Pleaser verify your email address');
-            })
-    }
 
     const updateUserData = (user, name) => {
         updateProfile(user, {
@@ -85,7 +78,7 @@ const Register = () => {
                 <input className="mx-2 p-2 w-50 mx-auto rounded" type="text" name="name" id="name" placeholder="Your name" required /><br />
                 <input className="mx-2 p-2 w-50 mx-auto rounded" onChange={handleEmailChange} type="email" name="email" id="email" placeholder="Your Email" required /><br />
                 <input className="mx-2 p-2 w-50 mx-auto rounded" onBlur={handlePasswordBlur} type="password" name="password" id="password" placeholder="Your Password" required /><br />
-                <input className="mx-2 p-2 w-50 mx-auto rounded" onBlur={handlePasswordBlur} type="text" name="photoid" id="photoid" placeholder="Photo URL" required /><br />
+                <input className="mx-2 p-2 w-50 mx-auto rounded" type="text" name="photo" id="photo" placeholder="Photo URL" required /><br />
                 <input className="w-50 mx-auto btn btn-primary m-2 p-2 bg-primary rounded text-center text-white" type="submit" value="Register" />
             </form>
             <p className="text-center"><small>Already Have an Account? Please <Link to="/emaillogin">Login</Link> </small></p>
