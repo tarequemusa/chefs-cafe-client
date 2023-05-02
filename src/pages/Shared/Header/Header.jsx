@@ -19,7 +19,7 @@ const Header = () => {
                         <Nav>
                             <Navbar.Collapse className="justify-content-end">
                                 <Navbar.Text>
-                                    <Button className="rounded-lg" variant="light">Login</Button>
+                                    <Button className="rounded" variant="light">Login</Button>
                                 </Navbar.Text>
                             </Navbar.Collapse>
                         </Nav>

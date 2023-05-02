@@ -1,9 +1,32 @@
+import {Container} from "react-bootstrap";
+import AwesomeSlider from 'react-awesome-slider';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+import 'react-awesome-slider/dist/styles.css';
+
 
 
 const Home = () => {
+
+    const AutoplaySlider = withAutoplay(AwesomeSlider);
+
     return (
         <div>
-            <h2>This is Home</h2>
+            <div>
+
+                <AutoplaySlider
+                    play={true}
+                    cancelOnInteraction={false} // should stop playing on user interaction
+                    interval={1000}
+                >
+                    <div className="img-fluid" data-src="https://i.ibb.co/wpM9J9Z/Black-and-Orange-Restaurant-Menu-Facebook-Cover-2.png" />
+                    <div data-src="https://i.ibb.co/WxzjKLL/Yellow-Green-Food-Facebook-Cover-1.png" />
+                    <div data-src="https://i.ibb.co/jLTdk3P/Yellow-Modern-Minimalist-Pizza-Food-Promotion-Instagram-Post-1.png" />
+                </AutoplaySlider>
+            </div>
+            <Container className="my-4">
+
+                <h2>This is Home</h2>
+            </Container>
         </div>
     );
 };
