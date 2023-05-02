@@ -12,13 +12,12 @@ const Home = () => {
     return (
         <div>
             <div>
-
                 <AutoplaySlider
                     play={true}
                     cancelOnInteraction={false} // should stop playing on user interaction
                     interval={1000}
                 >
-                    <div className="img-fluid" data-src="https://i.ibb.co/wpM9J9Z/Black-and-Orange-Restaurant-Menu-Facebook-Cover-2.png" />
+                    <div data-src="https://i.ibb.co/1GkkyMB/Black-and-Orange-Restaurant-Menu-Facebook-Cover-3.png" />
                     <div data-src="https://i.ibb.co/WxzjKLL/Yellow-Green-Food-Facebook-Cover-1.png" />
                     <div data-src="https://i.ibb.co/jLTdk3P/Yellow-Modern-Minimalist-Pizza-Food-Promotion-Instagram-Post-1.png" />
                 </AutoplaySlider>
