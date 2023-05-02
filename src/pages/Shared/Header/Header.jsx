@@ -1,4 +1,5 @@
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 
 const Header = () => {
@@ -19,7 +20,7 @@ const Header = () => {
                         <Nav>
                             <Navbar.Collapse className="justify-content-end">
                                 <Navbar.Text>
-                                    <Button className="rounded" variant="light">Login</Button>
+                                    <Button className="rounded px-3" variant="warning"><Link style={{textDecoration: 'none'}} className="text-dark" to="/login">Login</Link></Button>
                                 </Navbar.Text>
                             </Navbar.Collapse>
                         </Nav>
