@@ -7,6 +7,7 @@ import About from "../pages/About/About";
 import Login from "../components/Login/Login";
 import EmailLogin from "../components/EmailLogin/EmailLogin";
 import Register from "../components/Register/Register";
+import Chefs from "../components/Chefs/Chefs";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About></About>
+            },
+            {
+                path: '/chefs',
+                element: <Chefs></Chefs>
             },
             {
                 path: '/blog',
