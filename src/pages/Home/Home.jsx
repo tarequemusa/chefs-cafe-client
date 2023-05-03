@@ -17,55 +17,41 @@ const Home = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/cYvGvjm/Beige-Homemade-Goods-Vintage-Retro-Label-Design-Emblem-Logo-Template-2.png"
+                        src="https://i.ibb.co/mTJ2FCT/2.png"
                         alt="First slide"
                     />
                     <Carousel.Caption className="top">
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Welcome to The Chefs Cafe</h3>
+                        <p>The Best Italian Cuisine store in your area...</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/p1LMq5J/Beige-Homemade-Goods-Vintage-Retro-Label-Design-Emblem-Logo-Template-1.png"
+                        src="https://i.ibb.co/sQkfRNX/1.png"
                         alt="Second slide"
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Modern Food</h3>
+                        <p>Healthy food rich in vitamins and nutrients</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/Ch87JLs/Beige-Homemade-Goods-Vintage-Retro-Label-Design-Emblem-Logo-Template.png"
+                        src="https://i.ibb.co/Jp4z0m8/3.png"
                         alt="Third slide"
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
+                        <h3>Best Fast Food</h3>
                         <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                            Enjoy your favorite food and get a limited-time discount only at our restaurant.
                         </p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-            <div>
-                {/* <AutoplaySlider
-                    play={true}
-                    cancelOnInteraction={false} // should stop playing on user interaction
-                    interval={1000}
-                >
-                    <div data-src="https://i.ibb.co/1GkkyMB/Black-and-Orange-Restaurant-Menu-Facebook-Cover-3.png" />
-                    <div data-src="https://i.ibb.co/WxzjKLL/Yellow-Green-Food-Facebook-Cover-1.png" />
-                    <div data-src="https://i.ibb.co/jLTdk3P/Yellow-Modern-Minimalist-Pizza-Food-Promotion-Instagram-Post-1.png" />
-                    
-
-
-                </AutoplaySlider> */}
-            </div>
             <Container className="my-4">
                 <Chefs></Chefs>
             </Container>
