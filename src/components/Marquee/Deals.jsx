@@ -1,12 +1,11 @@
 import React from 'react';
 import {Image} from 'react-bootstrap';
-// import MyComponent from "../components/MyComponent";
 import Marquee from "react-fast-marquee";
 
 const Deals = () => {
     return (
         <>
-            <div className='my-4'>
+            <div className='my-4 pt-5 bg-light'>
                 <h4 className='text-center fw-bold underline mt-4'>SPECIAL DISHES TODAY</h4>
                 <p className='text-center fw-bold text-success mb-4'><small>LETS DISCOVER FOOD<hr /></small></p>
             </div>
