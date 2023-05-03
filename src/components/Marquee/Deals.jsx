@@ -1,13 +1,15 @@
 import React from 'react';
-import {Image} from 'react-bootstrap';
+import {Container, Image} from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
 
 const Deals = () => {
     return (
         <>
-            <div className='my-4 pt-5 bg-light'>
-                <h4 className='text-center fw-bold underline mt-4'>SPECIAL DISHES TODAY</h4>
-                <p className='text-center fw-bold text-success mb-4'><small>LETS DISCOVER FOOD<hr /></small></p>
+            <div className='mt-4 mb-4 p-3 bg-warning shadow'>
+                <Container className='d-flex justify-content-between align-items-center'>
+                    <h4 className='fw-bold text-dark border rounded p-3'>SPECIAL DISHES TODAY</h4>
+                    <h5 className='text-dark fw-bold text-success'>LETS DISCOVER FOOD</h5>
+                </Container>
             </div>
             <Marquee className='my-5 d-flex justify-content-center' autofill={true} pauseOnHover={true} speed={100}>
                 <Image className='w-75' src="https://i.ibb.co/5jfzWBc/a-1.png" rounded />
