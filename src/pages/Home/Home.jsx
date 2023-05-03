@@ -3,6 +3,7 @@ import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 import Chefs from "../../components/Chefs/Chefs";
+import Deals from "../../components/Marquee/Deals";
 
 
 
@@ -28,6 +29,7 @@ const Home = () => {
                 <h2>This is Home</h2>
                 <Chefs></Chefs>
             </Container>
+            <Deals></Deals>
         </div>
     );
 };
