@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut} from "firebase/auth";
 import app from '../../firebase/firebase.config';
 import {Container, Row} from 'react-bootstrap';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {FaEnvelope, FaGithub, FaGoogle} from 'react-icons/fa';
 
 const Login = () => {
@@ -12,6 +12,9 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider();
     const githhubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log('Login Page Location', location);
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, googleProvider)
@@ -43,7 +46,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 setUser(loggedUser);
-                navigate('/');
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 console.log(error);

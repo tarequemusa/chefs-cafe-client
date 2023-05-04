@@ -9,6 +9,8 @@ const auth = getAuth(app);
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
+    const [accepted, setAccepted] = useState(false);
+
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
@@ -72,8 +74,8 @@ const Register = () => {
         // setEmail(event.target.value);
     }
 
-    const handlePasswordBlur = (event) => {
-        // console.log(event.target.value);
+    const handleAccepted = (event) => {
+        setAccepted(event.target.checked);
     }
 
     return (
@@ -82,10 +84,12 @@ const Register = () => {
             <form className="justify-content-center d-flex flex-column" onSubmit={handleSubmit}>
                 <input className="mx-2 p-2 w-50 mx-auto rounded" type="text" name="name" id="name" placeholder="Your name" required /><br />
                 <input className="mx-2 p-2 w-50 mx-auto rounded" onChange={handleEmailChange} type="email" name="email" id="email" placeholder="Your Email" required /><br />
-                <input className="mx-2 p-2 w-50 mx-auto rounded" onBlur={handlePasswordBlur} type="password" name="password" id="password" placeholder="Your Password" required /><br />
+                <input className="mx-2 p-2 w-50 mx-auto rounded" type="password" name="password" id="password" placeholder="Your Password" required /><br />
                 <input className="mx-2 p-2 w-50 mx-auto rounded" type="text" name="photo" id="photo" placeholder="Photo URL" required /><br />
-                <Form.Check className="mx-auto" type="checkbox" name="accept" label="Accept Terms and Condition"></Form.Check>
-                <input className="w-50 mx-auto btn btn-primary m-2 p-2 bg-primary rounded text-center text-white" type="submit" value="Register" />
+                <Form.Check
+                    onClick={handleAccepted}
+                    className="mx-auto" type="checkbox" name="accept" label={<>Accept <Link to="/terms">Terms and Condition</Link></>}></Form.Check>
+                <input disabled={!accepted} className="w-50 mx-auto btn btn-primary m-2 p-2 bg-primary rounded text-center text-white" type="submit" value="Register" />
             </form>
             <p className="text-center"><small>Already Have an Account? Please <Link to="/emaillogin">Login</Link> </small></p>
             <p className="text-danger text-center">{error}</p>

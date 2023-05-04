@@ -11,6 +11,9 @@ import Chefs from "../components/Chefs/Chefs";
 import SingleChef from "../pages/Home/SingleChef/SingleChef";
 import RecipeView from "../layouts/RecipeView";
 import LoginLayouts from "../layouts/LoginLayouts";
+import PrivateRoute from "./PrivateRoute";
+import NavigationBar from "../pages/Shared/NavigationBar/NavigationBar";
+import Terms from "../pages/Terms/Terms";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +26,14 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
+                path: '/about',
+                element: <About></About>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+            {
                 path: '/login',
                 element: <Login></Login>
             },
@@ -31,16 +42,16 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/about',
-                element: <About></About>
-            },
-            {
                 path: '/emaillogin',
                 element: <EmailLogin></EmailLogin>
             },
             {
-                path: '/blog',
-                element: <Blog></Blog>
+                path: '/navigationlayouts',
+                element: <NavigationBar></NavigationBar>
+            },
+            {
+                path: '/terms',
+                element: <Terms></Terms>
             }
         ]
     },
@@ -52,10 +63,9 @@ const router = createBrowserRouter([
 
             {
                 path: ':id',
-                element: <SingleChef></SingleChef>,
+                element: <PrivateRoute><SingleChef></SingleChef></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/chefsdetails/${ params.id }`)
             },
-
 
         ]
     },

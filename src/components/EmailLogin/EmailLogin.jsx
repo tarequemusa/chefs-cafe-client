@@ -1,7 +1,7 @@
 import {getAuth, sendPasswordResetEmail, signInWithEmailAndPassword} from "firebase/auth";
 import {useContext, useRef, useState} from "react";
 import app from "../../firebase/firebase.config";
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {AuthContext} from "../../providers/AuthProvider";
 
 const auth = getAuth(app);
@@ -9,6 +9,9 @@ const auth = getAuth(app);
 const EmailLogin = () => {
     const {signIn} = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log('Login Page Location', location);
+    const from = location.state?.from?.pathname || '/';
 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -44,7 +47,7 @@ const EmailLogin = () => {
                 setSuccess('User Login Successful');
                 setError('');
                 console.log(loggedUser);
-                navigate('/');
+                navigate(from, {replace: true});
             })
             .catch(error => {
                 setError(error.message);
