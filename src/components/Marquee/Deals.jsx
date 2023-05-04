@@ -5,10 +5,10 @@ import Marquee from "react-fast-marquee";
 const Deals = () => {
     return (
         <>
-            <div className='mt-4 mb-4 p-3 bg-warning shadow'>
+            <div className='mt-4 mb-4 p-3 shadow'>
                 <Container className='d-flex justify-content-between align-items-center'>
-                    <h4 className='fw-bold text-dark border rounded p-3'>SPECIAL DISHES TODAY</h4>
-                    <h5 className='text-dark fw-bold text-success'>LETS DISCOVER FOOD</h5>
+                    <h4 className='fw-bold text-dark border rounded p-3'>RECIPE OF THE DAY</h4>
+                    <h5 className='text-dark fw-bold text-success'>CHEF UNIQUE RECIPE</h5>
                 </Container>
             </div>
             <Marquee className='my-5 d-flex justify-content-center' autofill={true} pauseOnHover={true} speed={100}>

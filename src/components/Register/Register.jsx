@@ -1,11 +1,14 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {createUserWithEmailAndPassword, getAuth, updateProfile} from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import {Link} from "react-router-dom";
+import {Form} from "react-bootstrap";
+import {AuthContext} from "../../providers/AuthProvider";
 
 const auth = getAuth(app);
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
@@ -13,11 +16,13 @@ const Register = () => {
         event.preventDefault();
         setSuccess('');
         setError('');
+        const form = event.target;
         const email = event.target.email.value;
         const password = event.target.password.value;
         const name = event.target.name.value;
         const photo = event.target.photo.value;
         console.log(name, email, password, photo);
+        createUser(email, password)
         // Password Validate:
         if(!/(?=.*[A-Z])/.test(password)) {
             setError('Please add atleast one uppercase');
@@ -79,6 +84,7 @@ const Register = () => {
                 <input className="mx-2 p-2 w-50 mx-auto rounded" onChange={handleEmailChange} type="email" name="email" id="email" placeholder="Your Email" required /><br />
                 <input className="mx-2 p-2 w-50 mx-auto rounded" onBlur={handlePasswordBlur} type="password" name="password" id="password" placeholder="Your Password" required /><br />
                 <input className="mx-2 p-2 w-50 mx-auto rounded" type="text" name="photo" id="photo" placeholder="Photo URL" required /><br />
+                <Form.Check className="mx-auto" type="checkbox" name="accept" label="Accept Terms and Condition"></Form.Check>
                 <input className="w-50 mx-auto btn btn-primary m-2 p-2 bg-primary rounded text-center text-white" type="submit" value="Register" />
             </form>
             <p className="text-center"><small>Already Have an Account? Please <Link to="/emaillogin">Login</Link> </small></p>

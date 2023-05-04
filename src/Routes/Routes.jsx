@@ -10,33 +10,17 @@ import Register from "../components/Register/Register";
 import Chefs from "../components/Chefs/Chefs";
 import SingleChef from "../pages/Home/SingleChef/SingleChef";
 import RecipeView from "../layouts/RecipeView";
+import LoginLayouts from "../layouts/LoginLayouts";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <Main></Main>,
+        element: <LoginLayouts></LoginLayouts>,
         errorElement: <Error />,
         children: [
             {
                 path: '/',
                 element: <Home></Home>
-            },
-            {
-                path: '/about',
-                element: <About></About>
-            },
-            {
-                path: '/chefs',
-                element: <Chefs></Chefs>
-            },
-            {
-                path: '/details/:id',
-                element: <SingleChef></SingleChef>,
-                loader: ({params}) => fetch(`http://localhost:5000/chefsdetails/${ params.id }`)
-            },
-            {
-                path: '/blog',
-                element: <Blog></Blog>
             },
             {
                 path: '/login',
@@ -47,9 +31,32 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
+                path: '/about',
+                element: <About></About>
+            },
+            {
                 path: '/emaillogin',
                 element: <EmailLogin></EmailLogin>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
+        ]
+    },
+    {
+        path: 'details',
+        element: <Main></Main>,
+        errorElement: <Error />,
+        children: [
+
+            {
+                path: ':id',
+                element: <SingleChef></SingleChef>,
+                loader: ({params}) => fetch(`http://localhost:5000/chefsdetails/${ params.id }`)
+            },
+
+
         ]
     },
     {

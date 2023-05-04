@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut} from "firebase/auth";
 import app from '../../firebase/firebase.config';
 import {Container, Row} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {FaEnvelope, FaGithub, FaGoogle} from 'react-icons/fa';
 
 const Login = () => {
@@ -11,6 +11,7 @@ const Login = () => {
     console.log(app);
     const googleProvider = new GoogleAuthProvider();
     const githhubProvider = new GithubAuthProvider();
+    const navigate = useNavigate();
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, googleProvider)
@@ -18,6 +19,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 setUser(loggedUser);
+                navigate('/');
             })
             .catch(error => {
                 console.log("error", error.message);
@@ -41,6 +43,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 setUser(loggedUser);
+                navigate('/');
             })
             .catch(error => {
                 console.log(error);
@@ -53,7 +56,7 @@ const Login = () => {
                 <h4 className="text-center mt-3 fw-bold border-bottom mb-4">Login to your Account</h4>
                 {
                     user ?
-                        <button className='btn outline-secondary' onClick={handleSignOut}>Sign Out</button> :
+                        <h5 className='fw-bold text-success'>You are logged in.</h5> :
                         <>
                             <div className="d-flex flex-column justify-content-center align-items-center">
                                 <div className='my-1 border w-50 rounded bg-success text-center py-2'>
