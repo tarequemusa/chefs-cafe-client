@@ -4,6 +4,7 @@ import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 import Chefs from "../../components/Chefs/Chefs";
 import Deals from "../../components/Marquee/Deals";
+import OpenHour from "../OpenHour/OpenHour";
 
 
 
@@ -53,6 +54,7 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
             <Container className="my-4">
+                <OpenHour></OpenHour>
                 <Chefs></Chefs>
             </Container>
             <Deals></Deals>

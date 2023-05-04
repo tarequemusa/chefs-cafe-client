@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import {Button, Container, Image, Nav, Navbar, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../../../providers/AuthProvider';
-import {FaUserCircle} from 'react-icons/fa';
 
 const NavigationBar = () => {
     const {user, logOut} = useContext(AuthContext);
@@ -20,8 +19,8 @@ const NavigationBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="justify-content-center flex-grow-1 pe-3">
-                        <a className="text-light px-3" style={{textDecoration: 'none'}} href="/">Home</a>
-                        <a className="text-light px-3" style={{textDecoration: 'none'}} href="/about">About</a>
+                        <a className="text-light px-3 " style={{textDecoration: 'none'}} href="/">Home</a>
+                        <a className="text-light px-3" style={{textDecoration: 'none'}} href="/about" >About</a>
                         <a className="text-light px-3" style={{textDecoration: 'none'}} href="/blog">Blog</a>
                         <a className="text-light px-3" style={{textDecoration: 'none'}} href="/terms">Terms & Condition</a>
                     </Nav>

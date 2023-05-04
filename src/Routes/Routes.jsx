@@ -14,6 +14,7 @@ import LoginLayouts from "../layouts/LoginLayouts";
 import PrivateRoute from "./PrivateRoute";
 import NavigationBar from "../pages/Shared/NavigationBar/NavigationBar";
 import Terms from "../pages/Terms/Terms";
+import OpenHour from "../pages/OpenHour/OpenHour";
 
 const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: '/navigationlayouts',
                 element: <NavigationBar></NavigationBar>
+            },
+            {
+                path: '/open',
+                element: <OpenHour></OpenHour>
             },
             {
                 path: '/terms',

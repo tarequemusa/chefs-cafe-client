@@ -11,7 +11,7 @@ const Footer = () => {
                         <div className="col-md-6 mt-md-0 mt-3 px-5">
                             <h5 className="text-uppercase text-warning fw-bold"><span className='border bg-primary text-light fw-bold px-3 py-1'>The Chefs</span> <span className='border bg-dark text-light fw-bold px-3 py-1'>CAFE</span></h5><hr />
                             <p className="text-warning">The Chefs Cafe website is a food blog and recipe sharing platform that focuses on providing its visitors with high-quality content related to food and cooking. </p>
-                            <h4 className='fw-bold border-bottom shadow py-4'>Get in Touch:{' '}
+                            <h4 className='fw-bold border-bottom shadow py-4'>Follow Us On:{' '}
                                 <Row className='display-6' xs={1} md={2} lg={6} >
                                     <Link className='text-light' to="#"><FaFacebook /></Link><Link className='text-light' to="#"><FaTwitter /></Link><Link className='text-light' to="#"><FaInstagram /></Link><Link className='text-light' to="#"><FaYoutube /></Link><Link className='text-light' to="#"><FaLinkedin /></Link><Link className='text-light' to="#"><FaTiktok /></Link>
                                 </Row></h4>
