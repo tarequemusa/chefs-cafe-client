@@ -1,10 +1,22 @@
 import React from 'react';
-import {Col, Container, Row} from 'react-bootstrap';
+import {Button, Col, Container, Row} from 'react-bootstrap';
+import JsPDF from 'jspdf';
+import {FaFilePdf} from 'react-icons/fa';
 
 const Blog = () => {
+    const generatePDF = () => {
+        const report = new JsPDF('portrait', 'pt', 'a4');
+        console.log('PDF Clicked', report);
+        report.html(document.querySelector('#report')).then(() => {
+            report.save('report.pdf');
+        })
+            .then()
+            .catch(error => console.log(error))
+    }
     return (
         <Container>
             <Row>
+                <div className='d-flex justify-content-end rounded mt-5'><Button className='w-25' variant='dark' onClick={generatePDF} type="button"><FaFilePdf />{' '}Export PDF</Button></div>
                 <h2 className='border-bottom text-center text-primary my-4 mb-2 text-uppercase fw-bold'>Blog Section</h2>
                 <div className='p-4 mx-auto d-flex flex-column'>
                     <Col>

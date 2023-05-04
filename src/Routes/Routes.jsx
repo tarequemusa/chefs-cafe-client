@@ -7,7 +7,6 @@ import About from "../pages/About/About";
 import Login from "../components/Login/Login";
 import EmailLogin from "../components/EmailLogin/EmailLogin";
 import Register from "../components/Register/Register";
-import Chefs from "../components/Chefs/Chefs";
 import SingleChef from "../pages/Home/SingleChef/SingleChef";
 import RecipeView from "../layouts/RecipeView";
 import LoginLayouts from "../layouts/LoginLayouts";
@@ -65,13 +64,11 @@ const router = createBrowserRouter([
         element: <Main></Main>,
         errorElement: <Error />,
         children: [
-
             {
                 path: ':id',
                 element: <PrivateRoute><SingleChef></SingleChef></PrivateRoute>,
                 loader: ({params}) => fetch(`https://the-chefs-cafe-server-tarequemusa.vercel.app/chefsdetails/${ params.id }`)
             },
-
         ]
     },
     {
