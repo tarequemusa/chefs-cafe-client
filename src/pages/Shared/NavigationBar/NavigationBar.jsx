@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {Button, Container, Nav, Navbar} from 'react-bootstrap';
+import {Button, Container, Image, Nav, Navbar, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../../../providers/AuthProvider';
 import {FaUserCircle} from 'react-icons/fa';
@@ -27,11 +27,30 @@ const NavigationBar = () => {
                     </Nav>
                     <Nav>
                         <Navbar.Collapse className="justify-content-end">
-                            <Navbar.Text>
-                                {user && <FaUserCircle style={{fontSize: '2rem'}} />
+                            <Navbar.Text className='d-flex'>
+                                {user && <div className='d-flex'>
+                                    <p>
+                                        {['bottom'].map((placement) => (
+                                            <OverlayTrigger
+                                                key={placement}
+                                                placement={placement}
+                                                overlay={
+                                                    <Tooltip id={`tooltip-${ placement }`}>
+                                                        <strong>{user.displayName} </strong>
+                                                    </Tooltip>
+                                                }
+                                            >
+
+                                                <p><Image className='w-25' src={user.photoURL} roundedCircle alt="" /></p>
+                                            </OverlayTrigger>
+                                        ))}
+
+                                    </p>
+
+                                </div>
                                 }
                                 {user ?
-                                    <Button onClick={handleLogOut} className="rounded px-3" variant="warning">Logout</Button> :
+                                    <Button onClick={handleLogOut} className="rounded px-3 py-0" style={{textDecoration: 'none'}} variant="warning">Logout</Button> :
                                     <Button className="rounded px-3" variant="warning"><Link style={{textDecoration: 'none'}} className="text-dark" to="/login">Login</Link></Button>
                                 }
                             </Navbar.Text>

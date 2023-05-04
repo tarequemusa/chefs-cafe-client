@@ -13,7 +13,7 @@ const Footer = () => {
                             <p className="text-warning">The Chefs Cafe website is a food blog and recipe sharing platform that focuses on providing its visitors with high-quality content related to food and cooking. </p>
                             <h4 className='fw-bold border-bottom shadow py-4'>Get in Touch:{' '}
                                 <Row className='display-6' xs={1} md={2} lg={6} >
-                                    <Link className='text-light' to="/facebook.com"><FaFacebook /></Link><Link className='text-light' to="/twitter.com"><FaTwitter /></Link><Link className='text-light' to="/instagram.com"><FaInstagram /></Link><Link className='text-light' to="/youtube.com"><FaYoutube /></Link><Link className='text-light' to="/linkedin.com"><FaLinkedin /></Link><Link className='text-light' to="/tiktok.com"><FaTiktok /></Link>
+                                    <Link className='text-light' to="#"><FaFacebook /></Link><Link className='text-light' to="#"><FaTwitter /></Link><Link className='text-light' to="#"><FaInstagram /></Link><Link className='text-light' to="#"><FaYoutube /></Link><Link className='text-light' to="#"><FaLinkedin /></Link><Link className='text-light' to="#"><FaTiktok /></Link>
                                 </Row></h4>
                         </div>
 

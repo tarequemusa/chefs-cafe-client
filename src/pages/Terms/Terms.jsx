@@ -7,7 +7,7 @@ const Terms = () => {
         <><h2 className='text-center fw-bold bottom-border shadow my-4 py-4'>Terms And Condition</h2>
             <Container>
                 <div className='mt-5 p-4'>
-                    <h5>Here is a sample terms and conditions document for a food blogging website:</h5>
+                    <h5>Terms and conditions for <span className='fw-bold'>The CHEFS CAFE</span></h5>
 
                     Welcome to <Link to="/">The Chefs Cafe</Link>, a website dedicated to food blogging. By accessing or using the Site, you agree to be bound by these terms and conditions (“Terms”) as well as any additional terms and conditions posted on the Site. If you do not agree to these Terms, you may not use the Site.
 

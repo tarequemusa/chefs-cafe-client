@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import {Form} from "react-bootstrap";
 import {AuthContext} from "../../providers/AuthProvider";
 
-const auth = getAuth(app);
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
@@ -24,7 +23,6 @@ const Register = () => {
         const name = event.target.name.value;
         const photo = event.target.photo.value;
         console.log(name, email, password, photo);
-        createUser(email, password)
         // Password Validate:
         if(!/(?=.*[A-Z])/.test(password)) {
             setError('Please add atleast one uppercase');
@@ -40,14 +38,16 @@ const Register = () => {
         }
 
         // Create user in Firebase
-        createUserWithEmailAndPassword(auth, email, password)
+        createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
-                setError('');
-                event.target.reset();
-                setSuccess('User Created Successfully');
-                updateUserData(result.user, name);
+                if(loggedUser) {
+                    console.log(loggedUser);
+                    setError('');
+                    form.reset();
+                    setSuccess('User Created Successfully');
+                    // updateUserData(result.user, name);
+                }
             })
             .catch(error => {
                 console.log(error.message);
